@@ -13,25 +13,34 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`getVolume()`](#getvolume)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### getVolume()
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+getVolume() => Promise<GetVolumeResult>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#getvolumeresult">GetVolumeResult</a>&gt;</code>
 
 --------------------
+
+
+### Interfaces
+
+
+#### GetVolumeResult
+
+| Prop                   | Type                |
+| ---------------------- | ------------------- |
+| **`volume`**           | <code>number</code> |
+| **`maxVolume`**        | <code>number</code> |
+| **`volumePercentage`** | <code>number</code> |
 
 </docgen-api>

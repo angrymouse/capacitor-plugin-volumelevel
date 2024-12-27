@@ -1,3 +1,9 @@
+export interface GetVolumeResult {
+  volume: number;
+  maxVolume: number;
+  volumePercentage: number;
+}
+
 export interface VolumeLevelPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  getVolume(): Promise<GetVolumeResult>;
 }
