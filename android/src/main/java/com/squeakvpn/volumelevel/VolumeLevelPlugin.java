@@ -12,11 +12,12 @@ public class VolumeLevelPlugin extends Plugin {
     private VolumeLevel implementation = new VolumeLevel();
 
     @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
+    public void getVolume(PluginCall call) {
+        VolumeLevel.VolumeInfo info = implementation.getVolume(getContext());
         JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
+        ret.put("volume", info.volume);
+        ret.put("maxVolume", info.maxVolume);
+        ret.put("volumePercentage", info.volumePercentage);
         call.resolve(ret);
     }
 }
